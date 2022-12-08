@@ -1,0 +1,852 @@
+
+/* --------- 순욱 : #modal_ticketing 시작 --------- */
+
+.modal_ticketing{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 1544px;
+    padding: 22px 45px;
+    background: #F2F0E5;
+    border-radius: 10px;
+}
+
+.modal_ticketing h3{
+    font-size: 24px;
+    line-height: 54px;
+    color: #fff;
+    margin-bottom: 27px;
+}
+
+.modal_ticketing hr{
+    border: none;
+    height: 2px;
+    background: #222;
+    margin-bottom: 15px;
+}
+
+.modal_ticketing input{display: none;}
+
+
+
+.style_blue{color: #3D5595;}
+.style_red{color: #C93000;}
+
+/* --------- #modal_ticketing label --------- */
+
+label{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+input:checked + label{font-weight: 700;}
+
+.scrollstyle label{
+    line-height: 32px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.scrollstyle input:checked + label{
+    color: #fff;
+    background-color: #222;
+}
+
+.btn_sort{
+    height: 27px;
+}
+
+.btn_sort label{
+    display: inline-block;
+    color: #757575;
+}
+.btn_sort input:checked+label{color: #222;}
+
+.btn_sort span{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    margin: 0 10px;
+    background: #222;
+    margin-bottom: 4px;
+}
+
+.scrollstyle{
+    height: 536px;
+    overflow-y: scroll;
+}
+
+.section_movie li{
+    margin-bottom: 5px;
+    text-indent: 21px;
+    padding-right: 5px;
+}
+
+
+.section_movie li label{background: no-repeat 10px 8px;}
+
+.section_movie label.grade_all{background-image: url("../img/ico_grade_all.png");}
+.section_movie label.grade_12{background-image: url("../img/ico_grade_12.png");}
+.section_movie label.grade_15{background-image: url("../img/ico_grade_15.png");}
+.section_movie label.grade_18{background-image: url("../img/ico_grade_18.png");}
+
+
+/* --------- #modal_ticketing scrollbar --------- */
+/* 스크롤바 전체 */
+.scrollstyle::-webkit-scrollbar{
+    width: 5px;
+    visibility: hidden;
+}
+
+/* 스크롤바 막대 */
+.scrollstyle::-webkit-scrollbar-thumb{
+    background-color: #222;
+    height: 1px;
+    border-radius: 5px;
+}
+/* 스크롤 막대 외부(남는 공간) */
+/* .scrollstyle::-webkit-scrollbar-track{} */
+
+
+.btn_close{
+    position: absolute;
+    font-size: 40px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.btn_close:hover{
+    color: #333;
+}
+
+
+/* --------- #modal_ticketing 섹션별 스타일 --------- */
+.modal_ticketing > div{
+    float: left;
+    border: 2px solid #222;
+    border-radius: 10px;
+    background: linear-gradient(#222 54px, #F2F0E5 54px);
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 5px;
+}
+
+.section_movie{width: 377px; height: 680px;}
+.section_cinema{width: 511px; height: 680px;}
+.section_date{width: 115px; height: 680px;}
+
+.section_date .scrollstyle{
+    height: 400px;
+}
+
+.modal_ticketing > div.section_schedule{
+    width: 411px; height: 462px;
+    position: relative;
+    background: linear-gradient(
+        #222 54px,
+        #F2F0E5 54px,
+        #F2F0E5 388px,
+        #222 388px);
+    padding-bottom: 92px;
+}
+
+
+/* --------- #modal_ticketing section_cinema --------- */
+
+.cinema_groupwrap > ul{
+    float: left;
+    border-right: 1px solid #222;
+    
+}
+
+.cinema_groupwrap li{
+    padding:0 5px;
+}
+.group_city{width: 86px;}
+.group_town{width: 170px;}
+.group_special{width: 190px;}
+
+
+
+.group_city li{
+    padding: 0;
+}
+
+.group_city label{
+    padding: 0;
+    text-align: center;
+}
+
+/* --------- #modal_ticketing section_date --------- */
+
+.modal_ticketing .section_date{
+    padding: 0 5px;
+    text-align: center;
+}
+
+.section_date h3{margin-bottom: 0;}
+
+.section_date .scrollstyle{
+    height: 607px;
+    padding: 0 5px;
+}
+
+.month{
+    border-bottom: 2px solid;
+    padding: 10px 0;
+    background-color: #F2F0E5;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+
+.month ~ .month{margin-top: 5px;}
+.month ~ .month::before{
+    content: "";
+    position: absolute;
+    border-top: 2px solid;
+    left: 0;
+    right: 0;
+    top: -2px;
+}
+
+
+.month p{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.section_date label{padding: 0;}
+
+input:checked + label.style_blue{background-color: #3D5595;}
+
+input:checked + label.style_red{background-color: #C93000;}
+
+/* --------- #modal_ticketing section_schedule --------- */
+
+
+
+.section_schedule .cf *{
+    float: left;
+}
+
+.legend p{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.legend p span{
+    border: 1px solid;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 9px;
+    line-height: 16px;
+    margin-right: 3px;
+}
+
+.section_schedule .style_red span{color: #C93000;}
+.section_schedule .style_blue span{color: #3D5595;}
+.legend > span{
+    display: block;
+    width: 1px; height: 17px;
+    background-color: #222;
+    margin: 5px 10px;
+}
+
+.section_schedule .scrollstyle{
+    height: 248px;
+}
+
+.group_schedule{
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.borderstyle{
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 3px 5px;
+    line-height: 16px;
+    margin-right: 5px;
+    float: left;
+}
+.remainseat{
+    width: 45px;
+    text-align: right;
+    float: right;
+}
+
+.section_schedule li{
+    display: inline-block;
+}
+
+.section_schedule label{
+    padding: 2px 5px;
+    display: block;
+    line-height: 27px;
+}
+
+.section_schedule input:checked + label span{
+    color: #fff;
+}
+
+
+
+.section_schedule a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.section_schedule a:hover::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: #fff;
+    left: 111px;
+    right: 111px;
+    bottom: 10px;
+}
+
+.schedule_frame{
+    height: 295px;
+}
+
+/* --------- #modal_ticketing section_ad --------- */
+
+.modal_ticketing .section_ad{
+    width: 411px; height: 208px;
+    background-image: none;
+    border: none;
+    padding: 0;
+}
+
+.section_ad div{
+    display: inline-block;
+    height: 208px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal_ticketing .section_ad .ad{
+    width: 218px;
+    background-image: linear-gradient(#f6c7bd, #efe1d4);
+    float: left;
+}
+
+.section_ad .qr{
+    width: 183px;
+    background: #222;
+    float: right;
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.qr h4{
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.qr img{
+    border: 10px solid #fff;
+    margin-top: 8px;
+}
+.qr p{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 100;
+}
+
+.modal_ticketing .section_ticketinginfo{
+    width: 1023px; height: 146px;
+    background: #222;
+    padding: 20px 40px;
+}
+
+.section_ticketinginfo img{
+    width: 66px;
+    height: 106px;
+    margin-right: 40px;
+}
+
+.ticketinginfo_frame{
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.ticketinginfo_frame p{
+    font-size: 20px;
+    line-height: 32px;
+}
+.ticketinginfo_frame p ~ p{
+    margin-top: 5px;
+}
+
+.ticketinginfo_frame span{color: #fff;}
+.ticketinginfo_frame span ~ span::before{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    line-height: 27px;
+    background-color: #fff;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.submit{
+    background: linear-gradient(90deg, #E72655 -16.03%, #FA4557 41.97%, #FF7356 99.98%);
+    border-radius: 10px;
+    width: 411px;
+    height: 146px;
+    line-height: 146px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 0;
+    margin: 5px;
+}
+
+.submit::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #E72655 68.37%, #FA4557 88.46%, rgba(255, 115, 86, 0) 104.74%);
+    text-decoration: underline;
+    transition: 0.4s;
+    z-index: -1;
+}
+.submit:hover::before{
+    right: 0;
+}
+
+.submit::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: #fff;
+    left: 105px;
+    right: 102px;
+    bottom: 43px;
+    transform-origin: 0, 50%;
+    transform: scaleX(0);
+}
+
+.submit:hover::after{
+    transform: scaleX(1);
+}
+
+/* --------- 순욱 : #modal_ticketing 끝 --------- */
+
+
+.btn_red{
+  background: #ed3124 ;
+  width:140px;
+  height:35.56px;
+  position: absolute;
+  bottom: 22.11px;
+  left : 28.5px;  
+  border:none;
+  border-radius: 5px;
+  padding: 0px;
+  font-size:16px;
+  text-align: center;
+  line-height:35.56px;
+  
+
+}
+.btn_white{
+  background: white;
+  width:140px;
+  height:35.56px;
+  position: absolute;
+  bottom: 70.16px;
+  left : 28.5px; 
+  border:none;
+  border-radius: 5px;
+  padding: 0;
+  font-size:16px;
+  text-align: center;
+  line-height:35.56px;
+  
+}
+.golden{
+  position: absolute;
+  top :5px;
+  left :5px;
+  width: 54px;
+  height: 26px;
+  
+  
+}
+
+
+.movie_poster {
+  position: relative;
+  width: 191px;
+  height: 272px;
+}
+
+ 
+  
+
+
+
+
+.cultureplex .title p{
+    opacity: 0;
+    transition: 2s;
+  }
+  .cultureplex .title h2{
+    opacity: 0;
+    transition-duration: 0.5s;
+    transition-delay: 1s;
+  }
+  .cultureplex .title h2.active{
+    opacity: 1;
+  }
+  .cultureplex .title p.active{
+    opacity: 1;
+  }
+  .cultureplex .title p:nth-child(1).active{
+    transform: translateX(400px);
+    transition: 1s;
+  }
+  .cultureplex .title p:nth-child(2).active{
+    transform: translateX(-400px);
+    transition: 1s;
+  }
+  .cultureplex .contents{
+    height: 890px;
+    position: relative;
+  }
+  .cultureplex .title p:nth-child(1){
+    text-align: left;
+  }
+  .cultureplex .title p:nth-child(2){
+    text-align: right;
+  }
+  .cultureplex .title h2{
+    text-align: center;
+  }
+  /*글씨움직이는효과*/
+  .cp_list{
+    position: relative;
+    width: 100%;
+    height: 890px;
+    margin-right: 0;
+  }
+  .cp_wrapper{
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+  }
+  .cp_detail{
+    position: absolute;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    width: 514px;
+    height: 450px;
+    left: 300px;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .cp_description li{
+    position:absolute;
+    left:'';
+    padding: 30px;
+    width:454px;
+  }
+  .preview_img{
+    position: absolute;
+    bottom: 30px;
+  }
+  .preview_img li{
+    width: 141px;
+    height: 90px;
+    float: left;
+    margin-right: 15px;
+  }
+  .preview_img img{
+    width: 100%;
+    height: 100%;
+  }
+  .preview_img li:last-child{
+    margin-right: 0;
+  }
+   
+  .cultureplex .contents{
+    background-image: url('');
+  }
+   
+  /*슬라이드효과*/
+  .cp_wrapper{
+    position: relative;
+    width: 100%;
+    height: 890px;
+    background-size: cover;
+  }
+  .cp_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    transition: 0.5s;
+  }
+  .cp_container > li{
+    position: absolute;
+    left:0;
+  }
+   
+  /*페이저*/
+  .cp_wrapper [class^="btn"]{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(34, 34, 34, 0.5) no-repeat 50%;
+    position: absolute;
+    top:50%;
+  }
+   
+  .cp_wrapper a.btn_prev{
+    background-image: url("../img/btn_prev.png");
+    left: 50px;
+  }
+  .cp_wrapper a.btn_next{
+    background-image: url("../img/btn_next.png");
+    right: 50px;
+  }
+  .cp_wrapper a[class^="btn"].disabled{
+    display: none;
+  }
+  .cp_wrapper .pager{
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+  }
+   
+  .cp_wrapper .pager a{
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+  .cp_wrapper .pager a.active{
+    background-color: #000;
+  }
+   
+  
+  
+/* --------- 순욱 : event~footer 시작 --------- */  
+/* --------- section.event --------- */
+
+.event{
+    padding: 54px 0;
+    text-align: center;
+}
+
+.event h2{
+    float: left;
+    margin-bottom: 27px;
+}
+
+.slideframe{
+    overflow: hidden;
+}
+
+.slide{
+    transition: 0.5s;
+}
+
+.slide li{
+    float: left;
+    width: 422px;
+}
+.slide li ~ li{
+    margin-left: 27px;
+}
+
+.slide h3{
+    font-size: 22px;
+    margin: 10px auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.slide img{
+    width: 100%;
+    height: 281px;
+}
+
+.event .pager a{
+    font-size: 32px;
+    /* color: rgba(117, 117, 117, 0.5); */
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 135px;
+    background: no-repeat 50%;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+.event .pager .btn_prev{
+    right: 101%;
+    background-image: url("../img/btn_prev.png");
+}
+.event  .pager .btn_next{
+    left: 101%;
+    background-image: url("../img/btn_next.png");
+}
+
+.event .pager a:hover{
+    background-color: #e5e5e5;
+}
+
+
+
+/* --------- section.notice --------- */
+
+.notice{
+    background-color: #F8F8F8;
+    line-height: 54px;
+    overflow: hidden;
+}
+
+.notice h2{
+    float: left;
+    margin-right: 38px;
+}
+.notice ul{
+    float: left;
+    height: 54px;
+    transition: margin-top 1s;
+}
+.notice .link{color: #757575;}
+
+/* --------- section.adv --------- */
+
+.adv{
+    background-color: #FFA443;
+    text-align: center;
+}
+
+/* --------- footer --------- */
+
+footer{
+    background-color: #F8F8F8;
+    padding-bottom: 54px;
+}
+
+footer .container{
+    background: url("../img/bg_footerlogo.png") no-repeat 0 50%;
+}
+
+
+footer *{
+    color: #757575;
+    line-height: 27px;
+}
+.fnb{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 27px;
+}
+
+.fnb li{
+    float: left;
+    line-height: 54px;
+    vertical-align: bottom;
+}
+
+.fnb li~li{
+    margin-left: 49px;
+}
+
+.fnb li a{
+    vertical-align: bottom;
+} 
+
+.fnb strong{
+    color: #222;
+    font-weight: 700;
+}
+
+address{
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+address span{
+    display: inline-block;
+}
+address a{
+    text-decoration: underline;
+}
+
+.familysite{
+    position: absolute;
+    right: 0;
+    top: 81px;
+}
+
+.familysite select{
+    width: 151px;
+    height: 27px;
+    font-size: 12px;
+    vertical-align: top;
+    margin-bottom: 27px;
+}
+
+.familysite > a{
+    display: inline-block;
+    width: 27px;
+    line-height: 27px;
+    background-color: #757575;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+.sns li{
+    font-size: 30px;
+    float: left;
+    margin-right: 30px;
+}
+/* --------- 순욱 : event~footer 끝 --------- */  
